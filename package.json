@@ -4,9 +4,13 @@
   "description": "TikTok backend",
   "main": "server.js",
   "type": "module",
+  "engines": {
+    "node": ">=6.x.x",
+    "npm": ">=3.9.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node"
+    "start": "node server.js"
   },
   "author": "DamiK",
   "license": "ISC",
