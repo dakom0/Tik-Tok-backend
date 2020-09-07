@@ -10,8 +10,8 @@ const port = process.env.PORT || 8000;
 // middlewares
 app.use(express.json())
 app.use((req, res, next) =>{
-    res.setHeaders('Access-Contro-Allow-Origin','*'),
-    res.setHeaders('Access-Contro-Allow-Headers','*'),
+    res.setHeader('Access-Contro-Allow-Origin','*'),
+    res.setHeader('Access-Contro-Allow-Headers','*'),
     next()
 })
 
