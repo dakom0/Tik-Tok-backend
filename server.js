@@ -2,21 +2,25 @@ import express from 'express'
 import mongoose from 'mongoose'
 import data from './data.js'
 import Videos from './dbModel.js'
+import dotenv from 'dotenv'
+import cors from 'cors'
 
 // app config
 const app = express();
 const port = process.env.PORT || 8000;
+dotenv.config()
 
 // middlewares
 app.use(express.json())
+app.use(cors())
 app.use((req, res, next) =>{
     res.setHeader('Access-Contro-Allow-Origin','*'),
-    res.setHeader('Access-Contro-Allow-Headers','*'),
+    res.setHeader('Access-Control-Allow-Headers','*'),
     next()
 })
 
 // DB config
-const conn = 'mongodb+srv://dakom1:tiktok@cluster0.n0sns.mongodb.net/tik-tok?retryWrites=true&w=majority';
+const conn = process.env.CONN_URL;
 
 mongoose.connect(conn,{
     useNewUrlParser: true,
